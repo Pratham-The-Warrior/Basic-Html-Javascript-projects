@@ -124,15 +124,15 @@
         }
       }
 
-      function share() {
+     function share() {         // only text authou and quote to be shared //
         const quoteText = quote.innerText;
         const authorText = author.innerText;
-        const shareText = `${quoteText} ${authorText}`;
+
+        // Format: "Quote text" (line break) — Author
+        const shareText = `${quoteText}\n\n${authorText}`;
 
         const shareData = {
-          title: "Quote of the Day",
-          text: shareText,
-          url: window.location.href,
+          text: shareText, // ✅ ONLY TEXT, NO URL, NO TITLE
         };
 
         if (navigator.share) {
